@@ -5,10 +5,13 @@
     <title>南兮</title>
 </head>
 <body>
-    <iframe name="iframe"
-           src="https://www.baidu.com"
-scrolling="auto"
-frameborder="0"
-onload="changeFrameHeight()"></iframe>
-</body>
+    <iframe id="myIframe" src="https://www.baidu.com" style="border:none;"></iframe>
+<script>
+    window.addEventListener('load', () => {
+        const iframe = document.getElementById('myIframe');
+        const contentHeight = iframe.contentWindow.document.body.scrollHeight + 'px';
+        iframe.style.height = contentHeight;
+    });
+</script>
+    </body>
 </html>
